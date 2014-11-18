@@ -34,9 +34,9 @@ var Start = function() {
   var input = document.querySelector("action");
   input.addEventListener(keyUp, function(event) {
 	  if (event.keyCode == 13) {
-	    gameStep(this.value)
+	    gameStep(this.value);
 	  }
   });
 }
 
-window.onload = Start  
+window.onload = Start;  
