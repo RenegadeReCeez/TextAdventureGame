@@ -22,7 +22,7 @@ var gameStep = function(string) {
 	execute(string);
 	report();
 } 
-var input = document.querySelector("#action");
+var input = document.querySelector("action");
 input.addEventListener(keyUp, function(event) {
 	if (event.keyCode == 13) {
 		var cmd = interpret(this.value);
