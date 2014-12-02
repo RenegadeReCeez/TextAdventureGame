@@ -1,5 +1,7 @@
 var player = {
-  items[], 
+  items[],
+  health = 2, 
+  playerLocation = 1;
   player.pickup = function(item) {
     this.items.push(item);
   }
@@ -9,7 +11,16 @@ var player = {
 			this.items.splice(pos, 1);
 		}	  
   }
+  player.hide = function {
+    var Hide = Math.random();
+  }
 }  
+
+var activation = function {
+  if (playerLocation = 8) {
+    var monsterActive = 1; 
+  }
+}
 var interpret = function(input){  
   var string = input.trim();
   var result = result.split(' ');
