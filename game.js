@@ -14,8 +14,20 @@ var player = {
   player.hide = function {
     var Hide = Math.random();
   }
+  player.examine = function(room) {
+    display room.items;
+  }
+  player.combine = function(item1,item2) {
+    for(var i = 0; this.items[i] === item1; i++) {
+      for(var a = 0; this.items[a] === item2; a++) {
+        if()
+      }
+    }
+  }
 }  
-
+var combo = [
+  []
+];
 var activation = function {
   if (playerLocation = 8) {
     var monsterActive = 1; 

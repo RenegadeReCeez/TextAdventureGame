@@ -13,8 +13,8 @@ var monsterAction = function {
       }   
       var monsterMove = function {
         if(monsterLocation <> playerLocation) {
-          for(var i = 0; map[monsterlocation[i]] = 1; i++) {
-            monsterLocation = map.indexOf(map[monsterLocation[i]]);
+          for(var i = 0; map[monsterlocation][i] = 1; i++) {
+            monsterLocation = map.indexOf(map[monsterLocation][i]);
           }
         }
       }
