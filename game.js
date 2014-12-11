@@ -1,7 +1,8 @@
 var player = {
-  items[],
-  health = 2, 
-  playerLocation = 1;
+  items: [],
+  health: 2, 
+  playerLocation: 1,
+}  
   player.pickup = function(item) {
     this.items.push(item);
   }
@@ -11,11 +12,12 @@ var player = {
 			this.items.splice(pos, 1);
 		}	  
   }
-  player.hide = function {
+  player.hide = function() {
     var Hide = Math.random();
+    return hide;
   }
   player.examine = function(room) {
-    display room.items;
+    displayScene(room.items[]);
   }
   player.combine = function(item1,item2) {
     for(var i = 0; this.items[i] === item1; i++) {
@@ -24,42 +26,69 @@ var player = {
       }
     }
   }
-}  
-var combo = [
-  []
-];
-var activation = function {
-  if (playerLocation = 8) {
-    var monsterActive = 1; 
-  }
-}
-var interpret = function(input){  
-  var string = input.trim();
-  var result = result.split(' ');
-  return result;
-}
-var execute = function(command) {
-  var action = command.splice(0,0,'');
-  player.pickup(action);
-}  
-var report = function() {
-	inventory = document.querySelector("#inventory > ul");
-	for(var i; i <= player.items.length; i++) {
-		inventory.innerHTML= inventory.innerHTML + player.items[i];
-	}
-}
-var gameStep = function(string) {
-	var cmd = interpret(string);
-	var result = execute(cmd);
-	report(result);
-} 
+
 var Start = function() {  
-  var input = document.querySelector("action");
-  input.addEventListener(keyUp, function(event) {
-	  if (event.keyCode == 13) {
+  var input = document.querySelector("input");
+  input.addEventListener("keyup", function(event) {
+	  if (event.keyCode === 13) {
 	    gameStep(this.value);
 	  }
   });
 }
+var gameStep = function(string) {
+	console.log("check");
+	var cmd = interpret(string);
+	var result = execute(cmd);
+	report(result);
+} 
+var interpret = function(input){  
+  var cmd =  {}; 
+  var tokens = input.trim().toLowerCase().split(" ");
+  cmd.action = tokens.shift();
+  cmd.target = tokens.join(" ");
+  return cmd;
+}
+var execute = function(command) {
+  player[command.action](command.target);
+  //var action = command.splice(0,0,'');
+  //player.pickup(action);
+}  
+var report = function(result) {
+	displayActions(result);
+	displayInventory(result);
+	displayScene(result);
+}
+function displayActions() {
+  var field;
+  var action;
+  var actionList;
+  actionList = document.querySelector("#help > ul");
+  ClearContent(actionList);
+  for(field in player) {
+    if (player[field] instanceof Function) {
+      action = document.createElement("li");
+      action.textContent = player.items[i];
+      actionList.appendChild(action);
+    }
+  }
+}      
+function displayInventory() {
+  var i;
+  var item;
+  var inventory;
+  inventory = document.querySelector("#inventory > ul");
+	clearContent(inventory);
+	for(i in player.items) {
+		item = document.createElemnt("li");
+		item.textContent = player.items[i];
+		inventory.appendChild(item);
+	}
+}	
+function displayScene() {
+  var i;
+  var description;
+  var	scene;
+  
+}  
 
 window.onload = Start;  
