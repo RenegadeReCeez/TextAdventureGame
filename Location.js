@@ -32,3 +32,4 @@ var theTower = new Location("The Tower","The Tower, it is clean and glowing whit
 var bedroom = new Location("Bedroom","This room used to be the bedroom of whomever used to live here or who might be currently living here. It is actually oranized and kept somewhat clean in contast to the rest of the ruined castle.","",map[7]);
 var diningRoom = new Location("Dining Room","The","",map[8]);
 var bathroom = new Location("Bathroom","","",map[9]);
+var location = [entrance, garden, kitchen, lounge, armory, monsterRoom, theTower, bedroom, diningRoom, bathroom];
