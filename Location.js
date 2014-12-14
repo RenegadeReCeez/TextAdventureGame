@@ -7,9 +7,9 @@ function Location(name, descrip, items, position){
   this.position = map;
 }
 
-Location.prototype.puzzle = function(){
+//Location.prototype.puzzle = function(){
 
-}
+//}
 var map = [
   [0,1,1,0,0,0,0,0,1,1],
   [1,0,0,0,0,0,0,0,0,0],

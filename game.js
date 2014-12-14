@@ -12,7 +12,7 @@ player.drop = function (item) {
     var position = this.items.indexOf(item);
     if (position >= 0) {
       this.items.splice(pos, 1);
-  }   
+    }   
 }
 player.hide = function() {
     var Hide = Math.random();
@@ -94,4 +94,5 @@ function displayScene() {
 function clearContent(thing) {
   thing.innerHTML='';
 }
+var window = {};
 window.onload = Start;  
