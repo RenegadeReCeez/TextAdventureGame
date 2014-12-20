@@ -1,39 +1,10 @@
-var player = {
-  items: [],
-  health: 2, 
-  playerLocation: 1}
-  
-player.pickup = function(item) {
-  for (var i = 0;location[player.playerLocation[i]]==item; i++) {
-    this.items.push(item);
-  }    
-}
-player.drop = function (item) {
-    var position = this.items.indexOf(item);
-    if (position >= 0) {
-      this.items.splice(pos, 1);
-    }   
-}
-player.hide = function() {
-    var Hide = Math.random();
-    return hide;
-}
-/*player.examine = function(room) {
-    displayScene(room.items[]);
-}
-player.combine = function(item1,item2) {
-  for(var i = 0; this.items[i] === item1; i++) {
-    for(var a = 0; this.items[a] === item2; a++) {
-      if()
-    }
-  }
-}*/
 
 var Start = function() {  
   var input = document.querySelector("input");
   input.addEventListener("keyup", function(event) {
 	  if (event.keyCode === 13) {
 	    gameStep(this.value);
+      clearContent(input);
 	  }
   });
 }
@@ -86,10 +57,18 @@ function displayInventory() {
 		inventory.appendChild(item);
 	}
 }	
-function displayScene() {
+function displayScene(room) {
   var i;
   var description;
   var	scene;
+  scene = document.querySelector("descrip");
+  //console.log(scene);
+  //clearContent(scene);
+  for(i in room){
+    description = document.createElement("li");
+    description.textContent = room;
+    scene.appendChild(description);
+  }
 }  
 function clearContent(thing) {
   thing.innerHTML='';
